@@ -9,9 +9,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './progress-bar.component.scss',
 })
 export class ProgressBarComponent {
-    @Input()
-    value: number = 0;
+  @Input()
+  value: number = 0;
 
-    @Input()
-    max: number = 0;
+  @Input()
+  max: number = 0;
 }

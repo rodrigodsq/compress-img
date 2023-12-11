@@ -2,21 +2,27 @@
 
   <header>
     <h1>Faça a compressão de suas imagens diretamente em seu navegador! </h1>
-    <input type="file" #fileInput style="display:none" multiple (change)="onFilesSelected($event)">
+    <input
+      type="file"
+      #fileInput
+      style="display:none"
+      multiple
+      accept="image/png, image/jpeg"
+      (change)="onFilesSelected($event)">
     <a (click)="fileInput.click()">Selecionar Imagens</a>
   </header>
 
   @if (compressedImages.length) {
     <div class="divisor"></div>
       <div class="base-flex">
-          <h2>Faça o download de todas as imagens!</h2>
+          <h2>Faça o download de todas as {{compressedImages.length}} imagens!</h2>
           <a (click)="downloadAllImages()">Baixar Todas</a>
       </div>
 
       <div class="divisor"></div>
 
       <div class="base-flex">
-          <h2> Ou <br/> Clique na imagem e faça download!</h2>
+          <h2> Ou <br/> Clique na imagem e faça download de cada uma!</h2>
           <section class="container-images">
               @for (image of compressedImages; track image; let i = $index) {
                   <div class="box-image" (click)="downloadImage(i)">
